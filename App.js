@@ -8,7 +8,7 @@ import { useState } from 'react';
 
 export default function App() {
 
-  const [categorySelec, setCategorySelec] = useState(" ")
+  const [categorySelec, setCategorySelec] = useState(``)
 
   console.log("categoria:", categorySelec)
 
@@ -27,14 +27,13 @@ export default function App() {
   }
 
   return (
-    <>
-      {
-        categorySelec
-          ?
-          <ProductsByCategory category={categorySelec} />
-          :
+    <>{
+      categorySelec
+      ?
+      <ProductsByCategory category={categorySelec} />
+      :
           <Categories onSelectCategoryEve={onSelectCategory} />
-      }
+    }
     </>
   );
 }

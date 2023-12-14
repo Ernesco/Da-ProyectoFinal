@@ -5,7 +5,7 @@ import { colors } from '../global/Color'
 
 const ProductsItem = ({ product }) => {
     return (
-        
+        <TouchableOpacity>
             <Card style={styles.cardContainer}>
                 <Text style={styles.productTitle}> {product.title} </Text>
                 <Image
@@ -14,6 +14,7 @@ const ProductsItem = ({ product }) => {
                     source={{ uri: product.thumbnail }}
                 />
             </Card>
+        </TouchableOpacity>
     )
 }
 
@@ -29,7 +30,7 @@ const styles = StyleSheet.create({
         padding: 20,
         margin: 10,
     },
-    
+
     productTitle: {
         fontSize: 18,
         fontFamily: "PermanentMarker-Regular"
