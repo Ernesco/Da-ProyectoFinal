@@ -1,7 +1,7 @@
 import { ActivityIndicator, Image, ScrollView, StyleSheet, Text, TouchableOpacity, View, useWindowDimensions } from 'react-native'
 import product_data from "../data/products_data.json"
 import { useEffect, useState } from 'react'
-import Header from '../componets/Header'
+//import Header from '../componets/Header'
 import { colors } from '../global/Color'
 
 
@@ -32,7 +32,6 @@ const ProductDetail = ({ route }) => {
                     <ActivityIndicator />
                     :
                     <>
-                        <Header title="Detalle del producto" />
                         <ScrollView>
                             <Image
                                 source={{ uri: productSelected.images[0] }}

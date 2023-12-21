@@ -5,7 +5,7 @@ import { colors } from '../global/Color'
 
 const ProductsItem = ({ product, navigation }) => {
     return (
-        <TouchableOpacity onPress={() => navigation.navigate("Detalle", product.id)}>
+        <TouchableOpacity onPress={() => navigation.navigate("Detail", product.id)}>
             <Card style={styles.cardContainer}>
                 <Text style={styles.productTitle}> {product.title} </Text>
                 <Image

@@ -4,23 +4,35 @@ import { NavigationContainer } from "@react-navigation/native";
 import Categories from "../screebs/Categories";
 import ProductDetail from "../screebs/ProductDetail";
 import ProductsByCategory from "../screebs/ProductsByCategory";
+import Header from "../componets/Header";
 
 const Stack = createNativeStackNavigator()
 const Navigator= () => {
     return(
         <NavigationContainer>
-            <Stack.Navigator>
+            <Stack.Navigator
+                initialRouteName="Category"
+                screenOptions={
+                ({navigation, route}) => ({
+                    header: () => <Header title={route.name} navigation={navigation}/>
+                    })
+
+                    }
+            >
                 <Stack.Screen
-                    name="Categorias"
+                    name="Category"
                         component={Categories}
+                        options={{title: "Categorias"}}
                 />
                 <Stack.Screen
-                    name="Productos"
+                    name="Products"
                         component={ProductsByCategory}
+                        options={{title: "Productos"}}
                 />
                 <Stack.Screen
-                    name="ProdDetalle"
+                    name="Detail"
                         component={ProductDetail}
+                        options={{title: "Detalle del Producto"}}
                 />
             </Stack.Navigator>
         </NavigationContainer>
