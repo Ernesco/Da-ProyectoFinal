@@ -5,12 +5,14 @@ import Header from '../componets/Header'
 import { colors } from '../global/Color'
 
 
-const ProductDetail = ({ productId }) => {
+const ProductDetail = ({ route }) => {
     const [productSelected, setProductSelected] = useState({})
     const [isLoading, setIsLoading] = useState(true)
     const [isPortrait, setIsPortrait] = useState(true)
 
     const { height, width } = useWindowDimensions()
+
+    const productId = route.params
 
 
     useEffect(() => {

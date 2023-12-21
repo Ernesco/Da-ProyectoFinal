@@ -7,10 +7,12 @@ import { useState, useEffect } from 'react'
 import Search from '../componets/Search'
 
 
-const ProductsByCategory = ({ category, SelecProducId }) => {
+const ProductsByCategory = ({ navigation, route }) => {
 
     const [productsByCategory, setProductsByCategory] = useState ([])
     const [search, setSearchEv] = useState ()
+
+    const {category} = route.params
 
     useEffect(() => {
         const productFilterCat = products_data.filter(product => product.category===category)
@@ -20,7 +22,7 @@ const ProductsByCategory = ({ category, SelecProducId }) => {
     }, [category, search])
 
     const renderProductItem = ({ item }) => (
-        <ProductsItem product={item} SelecProducId={SelecProducId}/>
+        <ProductsItem product={item} navigation={navigation}/>
     )
 
     const onSearch = (search) =>(

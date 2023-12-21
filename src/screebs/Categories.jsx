@@ -5,10 +5,10 @@ import Header from '../componets/Header'
 import categories_data from "../data/categories_data.json"
 import CategoryItems from '../componets/CategoryItems'
 
-const Categories = ({onSelectCategoryEve}) => {
+const Categories = ({navigation}) => {
 
     const renderCategoryItem = ({ item }) => (
-        <CategoryItems category={ item } onSelectCategoryEve={onSelectCategoryEve}/>
+        <CategoryItems category={ item } navigation={navigation}/>
     )
 
     return (

@@ -1,11 +1,11 @@
-import { StatusBar } from 'expo-status-bar';
 import { ActivityIndicator, StyleSheet, Text, View } from 'react-native';
-import Categories from './src/screebs/Categories';
+//import Categories from './src/screebs/Categories';
 import { colors } from './src/global/Color';
 import { useFonts } from 'expo-font';
-import ProductsByCategory from './src/screebs/ProductsByCategory';
+//import ProductsByCategory from './src/screebs/ProductsByCategory';
 import { useState } from 'react';
-import ProductDetail from './src/screebs/ProductDetail';
+//import ProductDetail from './src/screebs/ProductDetail';
+import Navigator from "./src/navigation/Navigator"
 
 export default function App() {
 
@@ -33,20 +33,10 @@ export default function App() {
   }
 
   return (
-    <>{
-      productIdSelected
-      ?
-      <ProductDetail productId = {productIdSelected}/>
-      :
-      categorySelec
-      ?
-      <ProductsByCategory category={categorySelec} SelecProducId={SelecId} />
-      :
-          <Categories onSelectCategoryEve={onSelectCategory} />
-    }
+    <>
+      <Navigator/>
     </>
   );
 }
-
 const styles = StyleSheet.create({
 });

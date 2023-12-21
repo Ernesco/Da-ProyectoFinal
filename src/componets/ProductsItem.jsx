@@ -3,9 +3,9 @@ import React from 'react'
 import Card from './Card'
 import { colors } from '../global/Color'
 
-const ProductsItem = ({ product, SelecProducId }) => {
+const ProductsItem = ({ product, navigation }) => {
     return (
-        <TouchableOpacity onPress={() => SelecProducId(product.id)}>
+        <TouchableOpacity onPress={() => navigation.navigate("Detalle", product.id)}>
             <Card style={styles.cardContainer}>
                 <Text style={styles.productTitle}> {product.title} </Text>
                 <Image
