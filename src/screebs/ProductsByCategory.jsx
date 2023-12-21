@@ -7,7 +7,7 @@ import { useState, useEffect } from 'react'
 import Search from '../componets/Search'
 
 
-const ProductsByCategory = ({ category }) => {
+const ProductsByCategory = ({ category, SelecProducId }) => {
 
     const [productsByCategory, setProductsByCategory] = useState ([])
     const [search, setSearchEv] = useState ()
@@ -20,7 +20,7 @@ const ProductsByCategory = ({ category }) => {
     }, [category, search])
 
     const renderProductItem = ({ item }) => (
-        <ProductsItem product={item} />
+        <ProductsItem product={item} SelecProducId={SelecProducId}/>
     )
 
     const onSearch = (search) =>(

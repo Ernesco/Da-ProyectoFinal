@@ -5,10 +5,12 @@ import { colors } from './src/global/Color';
 import { useFonts } from 'expo-font';
 import ProductsByCategory from './src/screebs/ProductsByCategory';
 import { useState } from 'react';
+import ProductDetail from './src/screebs/ProductDetail';
 
 export default function App() {
 
   const [categorySelec, setCategorySelec] = useState(``)
+  const [productIdSelected, setPoroductIdSelected] = useState (``)
 
   console.log("categoria:", categorySelec)
 
@@ -26,11 +28,19 @@ export default function App() {
     setCategorySelec(category)
   }
 
+  const SelecId = (productId) => {
+    setPoroductIdSelected(productId)
+  }
+
   return (
     <>{
+      productIdSelected
+      ?
+      <ProductDetail productId = {productIdSelected}/>
+      :
       categorySelec
       ?
-      <ProductsByCategory category={categorySelec} />
+      <ProductsByCategory category={categorySelec} SelecProducId={SelecId} />
       :
           <Categories onSelectCategoryEve={onSelectCategory} />
     }
