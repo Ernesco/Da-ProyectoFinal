@@ -13,7 +13,7 @@ const Categories = ({navigation}) => {
 
     return (
         <>
-        <FlatList
+        <FlatList style = {styles.Categories}
             data = { categories_data }
             renderItem= { renderCategoryItem }
             keyExtractor = { item => item }
@@ -24,4 +24,9 @@ const Categories = ({navigation}) => {
 
 export default Categories
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+    Categories:{
+        marginBottom: 100,
+    }
+
+})

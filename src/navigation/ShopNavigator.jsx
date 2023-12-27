@@ -7,9 +7,8 @@ import ProductsByCategory from "../screebs/ProductsByCategory";
 import Header from "../componets/Header";
 
 const Stack = createNativeStackNavigator()
-const Navigator= () => {
+const ShopNavigator= () => {
     return(
-        <NavigationContainer>
             <Stack.Navigator
                 initialRouteName="Category"
                 screenOptions={
@@ -35,9 +34,8 @@ const Navigator= () => {
                         options={{title: "Detalle del Producto"}}
                 />
             </Stack.Navigator>
-        </NavigationContainer>
     )
 
 }
 
-export default Navigator
+export default ShopNavigator
