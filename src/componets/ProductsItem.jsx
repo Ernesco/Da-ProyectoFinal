@@ -2,10 +2,18 @@ import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import React from 'react'
 import Card from './Card'
 import { colors } from '../global/Color'
+import { useDispatch } from 'react-redux'
+import { setProductIdSelected } from '../features/shopSlice'
 
 const ProductsItem = ({ product, navigation }) => {
+
+    const dispach = useDispatch()
     return (
-        <TouchableOpacity onPress={() => navigation.navigate("Detail", product.id)}>
+        <TouchableOpacity onPress={() => {
+            dispach(setProductIdSelected(product.id))
+            navigation.navigate("Detail", product.id)
+            }
+            }>
             <Card style={styles.cardContainer}>
                 <Text style={styles.productTitle}> {product.title} </Text>
                 <Image
